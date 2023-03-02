@@ -13,6 +13,7 @@ import { MessageService } from 'primeng/api';
 import { AuthTokenPermissionService } from './interceptors/auth-token-permission.service';
 import { MessageRedModule } from "./pages/message/message.module";
 import {MessageModule} from 'primeng/message';
+import { DatePipe } from '@angular/common';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +36,8 @@ import {MessageModule} from 'primeng/message';
       useClass: AuthTokenPermissionService,
       multi: true,
     },
-    MessageService
+    MessageService,
+    DatePipe
   ],
   bootstrap: [AppComponent]
 })

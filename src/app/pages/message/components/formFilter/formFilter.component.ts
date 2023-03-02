@@ -1,6 +1,7 @@
+import { DatePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { ListMessageModel } from 'src/app/models/message/message.model';
+import { FilterListMessageModel, ListMessageModel } from 'src/app/models/message/message.model';
 import { MessageService } from 'src/app/services/message/message.service';
 
 
@@ -13,7 +14,7 @@ export class FormFilterComponent implements OnInit {
 
   filterMessageForm:FormGroup;
   isLoading:boolean;
-  constructor(private fb: FormBuilder,private messageService:MessageService ) { }
+  constructor(private fb: FormBuilder,private messageService:MessageService, private date:DatePipe ) { }
 
   ngOnInit() {
     this.generateForm()
@@ -27,7 +28,12 @@ export class FormFilterComponent implements OnInit {
   }
   
   searchMessage(){
-    this.messageService.filterMessage(this.filterMessageForm.value).subscribe(
+    const { title,creado_at}=this.filterMessageForm.value;
+    const filtro:FilterListMessageModel={
+      title,
+      creado_at:creado_at?this.date.transform(creado_at,"YYYY-MM-dd"):null
+    }
+    this.messageService.filterMessage(filtro).subscribe(
       {
         next:(messages:ListMessageModel[])=>{
           console.log(messages);
