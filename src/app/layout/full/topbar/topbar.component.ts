@@ -7,12 +7,14 @@ import { AppComponent } from 'src/app/app.component';
   styleUrls: ['./topbar.component.css']
 })
 export class TopbarComponent implements OnInit {
+  activate:boolean=true
   constructor(private appComponent:AppComponent) { }
 
   ngOnInit() {
   }
-  menu(data:"seeAll"){
-    this.appComponent.view=data
+  menu(view:"seeAll"|"meAll"|"crear"){
+    this.appComponent.changeView(view)
+    this.activate=false
   }
 
 }

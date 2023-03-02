@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./message.component.css']
 })
 export class MessageComponent implements OnInit {
-
+  view:"seeAll"|"meAll"|"crear"="meAll"
   constructor() { }
 
   ngOnInit() {

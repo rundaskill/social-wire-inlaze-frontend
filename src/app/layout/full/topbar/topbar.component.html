@@ -7,9 +7,9 @@
       style="height: 2.25rem"
     />
   </a>
-  <nav class="menu">
+  <nav class="menu" *ngIf="activate">
     <a href="#">Anderson Daniel Chavez</a>
-    <a href="#">
+    <a href="#" (click)="menu('crear')">
       <img
         id="app-logo"
         src="assets/icons/create.svg"
@@ -18,7 +18,7 @@
       />
       <span class="menu-text">Create Message</span></a
     >
-    <a href="#">
+    <a href="#" (click)="menu('meAll')">
       <img
         id="app-logo"
         src="assets/icons/send.svg"
@@ -55,7 +55,7 @@
       style="height: 1.25rem"
     />
   </div>
-  <div class="menu-btn">
+  <div class="menu-btn" (click)="activate = true">
     <img
       id="app-logo"
       src="assets/icons/menu.svg"

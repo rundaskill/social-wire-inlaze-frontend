@@ -1,2 +1,13 @@
-<!-- <app-allMessage></app-allMessage> -->
-<app-meMessage></app-meMessage>
+<!--  -->
+
+<span [ngSwitch]="view">
+  <div *ngSwitchCase="'seeAll'">
+    <app-allMessage></app-allMessage>
+  </div>
+  <p *ngSwitchCase="'meAll'">
+    <app-meMessage></app-meMessage>
+  </p>
+  <!-- <p *ngSwitchDefault>
+
+</p> -->
+</span>

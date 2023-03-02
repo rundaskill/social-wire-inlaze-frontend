@@ -1,7 +1,7 @@
 <!-- <router-outlet></router-outlet> -->
 <app-auth *ngIf="!authService.currentUserValue"></app-auth>
 <app-appmain *ngIf="authService.currentUserValue">
-  <app-message *ngIf="view == 'seeAll'"></app-message>
+  <app-message #mensaje></app-message>
 </app-appmain>
 <!-- {{ authService.currentUserValue | json }} -->
 <!-- <p-messages></p-messages> -->
