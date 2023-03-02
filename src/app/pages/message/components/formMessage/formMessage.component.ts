@@ -23,4 +23,7 @@ export class FormMessageComponent implements OnInit {
       message:[this.data?.message||"",Validators.required]
     })
   }
+  shareMessage(){
+    
+  }
 }

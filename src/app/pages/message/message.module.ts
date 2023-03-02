@@ -13,6 +13,7 @@ import {CardModule} from 'primeng/card';
 import { AllMessageComponent } from './templates/allMessage/allMessage.component';
 import { MeMessageComponent } from './templates/meMessage/meMessage.component';
 import { FormMessageComponent } from './components/formMessage/formMessage.component';
+import {InputTextareaModule} from 'primeng/inputtextarea';
 @NgModule({
   imports: [
     CommonModule,
@@ -22,7 +23,8 @@ import { FormMessageComponent } from './components/formMessage/formMessage.compo
     BrowserAnimationsModule,
     ReactiveFormsModule,
     FormsModule,
-    CardModule
+    CardModule,
+    InputTextareaModule
   ],
   declarations: [MessageComponent,CardComponent,FormFilterComponent,AllMessageComponent,MeMessageComponent,FormMessageComponent],
   exports:[MessageComponent]
