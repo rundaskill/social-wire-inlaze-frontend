@@ -1,0 +1,7 @@
+<p style="color: wheat">message works!</p>
+<app-formFilter (listMessage)="data = $event"></app-formFilter>
+<div class="grid p-fluid" *ngIf="data">
+  <div class="col-12 md:col-6" *ngFor="let item of data">
+    <app-card [setMessage]="item"></app-card>
+  </div>
+</div>

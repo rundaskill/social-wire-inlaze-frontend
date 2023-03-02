@@ -9,6 +9,8 @@ import {CalendarModule} from 'primeng/calendar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormFilterComponent } from './components/formFilter/formFilter.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {CardModule} from 'primeng/card';
+import { AllMessageComponent } from './templates/allMessage/allMessage.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -17,9 +19,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CalendarModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    CardModule
   ],
-  declarations: [MessageComponent,CardComponent,FormFilterComponent],
+  declarations: [MessageComponent,CardComponent,FormFilterComponent,AllMessageComponent],
   exports:[MessageComponent]
 })
 export class MessageRedModule { }

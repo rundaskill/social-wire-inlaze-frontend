@@ -1,5 +1,5 @@
 import { DatePipe } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { FilterListMessageModel, ListMessageModel } from 'src/app/models/message/message.model';
 import { MessageService } from 'src/app/services/message/message.service';
@@ -11,7 +11,7 @@ import { MessageService } from 'src/app/services/message/message.service';
   styleUrls: ['./formFilter.component.css']
 })
 export class FormFilterComponent implements OnInit {
-
+  @Output() listMessage:EventEmitter<ListMessageModel[]>=new EventEmitter<ListMessageModel[]>()
   filterMessageForm:FormGroup;
   isLoading:boolean;
   constructor(private fb: FormBuilder,private messageService:MessageService, private date:DatePipe ) { }
@@ -36,8 +36,7 @@ export class FormFilterComponent implements OnInit {
     this.messageService.filterMessage(filtro).subscribe(
       {
         next:(messages:ListMessageModel[])=>{
-          console.log(messages);
-          
+          this.listMessage.emit(messages)
         }
       }
     )
