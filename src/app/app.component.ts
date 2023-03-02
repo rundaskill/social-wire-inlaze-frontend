@@ -12,6 +12,7 @@ import { AuthService } from './services/auth/auth.service';
 export class AppComponent implements OnInit {
   title = 'social-wire-inlaze-frontend';
   user:CurrentUserValueModel
+  view:"seeAll"=null
   constructor(public authService:AuthService) {
     
   }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-appmain',
@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./appmain.component.scss']
 })
 export class AppmainComponent implements OnInit {
+  @Output() activateView:EventEmitter<"seeAll">=new EventEmitter<"seeAll">()
 
   constructor() { }
 
