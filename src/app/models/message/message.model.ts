@@ -13,3 +13,7 @@ export interface FilterListMessageModel{
     title?: string;
     creado_at?: string;
 }
+export interface CreateMessageModel{
+  title: string;
+  message: string;
+}

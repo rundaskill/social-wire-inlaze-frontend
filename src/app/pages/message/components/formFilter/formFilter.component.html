@@ -12,7 +12,7 @@
         />
       </span>
     </div>
-    <div class="col-12 md:col-6">
+    <div [class]="activateOnlyDate ? 'col-12 md:col-12' : 'col-12 md:col-6'">
       <label for="basic">Date select</label>
       <p-calendar
         formControlName="creado_at"

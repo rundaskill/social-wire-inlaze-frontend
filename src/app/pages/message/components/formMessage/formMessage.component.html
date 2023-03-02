@@ -1,0 +1,16 @@
+<form [formGroup]="messageForm">
+  <div class="grid p-fluid">
+    <div class="col-12 md:col-6">
+      <label for="inputtext-right">Title *</label>
+      <span class="p-input-icon-right">
+        <i class="pi pi-search"></i>
+        <input
+          type="text"
+          formControlName="title"
+          placeholder="Title"
+          pInputText
+        />
+      </span>
+    </div>
+  </div>
+</form>

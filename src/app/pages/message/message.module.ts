@@ -12,6 +12,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {CardModule} from 'primeng/card';
 import { AllMessageComponent } from './templates/allMessage/allMessage.component';
 import { MeMessageComponent } from './templates/meMessage/meMessage.component';
+import { FormMessageComponent } from './components/formMessage/formMessage.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -23,7 +24,7 @@ import { MeMessageComponent } from './templates/meMessage/meMessage.component';
     FormsModule,
     CardModule
   ],
-  declarations: [MessageComponent,CardComponent,FormFilterComponent,AllMessageComponent,MeMessageComponent],
+  declarations: [MessageComponent,CardComponent,FormFilterComponent,AllMessageComponent,MeMessageComponent,FormMessageComponent],
   exports:[MessageComponent]
 })
 export class MessageRedModule { }
