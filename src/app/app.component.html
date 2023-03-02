@@ -1,2 +1,5 @@
 <!-- <router-outlet></router-outlet> -->
-<app-auth></app-auth>
+<app-auth *ngIf="!authService.currentUserValue"></app-auth>
+<app-appmain *ngIf="authService.currentUserValue">
+  <app-message></app-message>
+</app-appmain>

@@ -8,6 +8,7 @@ import { TopbarComponent } from './layout/full/topbar/topBar.component';
 import { AuthModule } from './pages/auth/auth.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { MessageModule } from './pages/message/message.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +20,8 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     AuthModule,
-    HttpClientModule
+    HttpClientModule,
+    MessageModule
    
   ],
   providers: [],

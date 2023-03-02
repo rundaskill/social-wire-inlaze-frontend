@@ -1,4 +1,4 @@
-<div class="search">
+<!-- <div class="search">
   <input type="text" placeholder="Buscar..." />
   <button type="submit">
     <img
@@ -12,4 +12,19 @@
 
 <div class="date-input">
   <input type="date" id="date" name="date" />
-</div>
+</div> -->
+<form style="padding-top: 25px">
+  <div class="grid p-fluid">
+    <div class="col-12 md:col-6">
+      <label for="inputtext-right">What Search?</label>
+      <span class="p-input-icon-right">
+        <i class="pi pi-search"></i>
+        <input type="text" placeholder="I like Sports" pInputText />
+      </span>
+    </div>
+    <div class="col-12 md:col-6">
+      <label for="basic">Date select</label>
+      <p-calendar inputId="basic" [showIcon]="true"></p-calendar>
+    </div>
+  </div>
+</form>

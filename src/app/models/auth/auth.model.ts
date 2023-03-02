@@ -1,6 +1,6 @@
 import { UserModel } from "../user/user.model";
 
-export interface currentUserValueModel {
+export interface CurrentUserValueModel {
   access_token: string;
   user: UserModel;
 }
