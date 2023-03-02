@@ -2,30 +2,31 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { BehaviorSubject, map, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment.prod';
+import { currentUserValueModel } from 'src/app/models/auth/auth.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-private currentUserSubject: BehaviorSubject<any>;
-public currentUser: Observable<any> = null;
+private currentUserSubject: BehaviorSubject<currentUserValueModel>;
+public currentUser: Observable<currentUserValueModel> = null;
 constructor(private http: HttpClient) {
-  this.currentUserSubject = new BehaviorSubject<any>(
+  this.currentUserSubject = new BehaviorSubject<currentUserValueModel>(
     JSON.parse(localStorage.getItem('currentUser'))
   );
   this.currentUser = this.currentUserSubject.asObservable();
  }
- public get currentUserValue(): any {
+ public get currentUserValue(): currentUserValueModel|null {
   return this.currentUserSubject?.value ||null
 }
 login(form: {
   email: string;
   password: string;
-}): Observable<any | HttpErrorResponse> {
+}): Observable<currentUserValueModel | HttpErrorResponse> {
   return this.http
-    .post<any>(`${environment.apiSocialWires}auth`, form)
+    .post<currentUserValueModel>(`${environment.apiSocialWires}auth`, form)
     .pipe(
-      map((user: any) => {
+      map((user: currentUserValueModel) => {
         localStorage.setItem('currentUser', JSON.stringify(user));
         this.currentUserSubject.next(user);
         return user;
