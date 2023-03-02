@@ -1,0 +1,60 @@
+<h4>
+  <button
+    pButton
+    pRipple
+    type="button"
+    label="Sign In"
+    class="p-button-outlined p-button-rounded p-button-secondary"
+    style="width: 89.5%"
+    (click)="signIn.emit(false)"
+  ></button>
+</h4>
+<h6 *ngIf="error" class="p-error block">{{ error }}</h6>
+<form [formGroup]="signUpForm">
+  <div class="input-panel flex flex-column px-3">
+    <div class="p-inputgroup mt-3 mb-3">
+      <input
+        type="text"
+        placeholder="Nickname"
+        [formControl]="signUpForm.controls['nickName']"
+        pInputText
+      />
+    </div>
+
+    <input
+      type="text"
+      placeholder="Full Name"
+      pInputText
+      [formControl]="signUpForm.controls['fullName']"
+    />
+    <div class="p-inputgroup mt-3 mb-1">
+      <input
+        type="email"
+        placeholder="Email"
+        [formControl]="signUpForm.controls['email']"
+        pInputText
+      />
+    </div>
+    <div class="p-inputgroup mt-3 mb-3">
+      <input
+        type="password"
+        id="password"
+        placeholder="password"
+        [formControl]="signUpForm.controls['password']"
+        pInputText
+      />
+    </div>
+    <div></div>
+  </div>
+</form>
+
+<div class="mb-2" *ngIf="isLoading">
+  <p-progressBar mode="indeterminate"></p-progressBar>
+</div>
+<p-button
+  *ngIf="!isLoading"
+  [disabled]="!signUpForm.valid || isLoading"
+  (click)="signUp()"
+  class="login-button p-button-secondary mb-6 px-3"
+  label="Create"
+></p-button>

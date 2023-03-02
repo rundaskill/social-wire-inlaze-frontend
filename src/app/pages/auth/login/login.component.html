@@ -1,0 +1,46 @@
+<h4>
+  <button
+    pButton
+    pRipple
+    type="button"
+    label="Sign up"
+    class="p-button-outlined p-button-rounded p-button-secondary"
+    style="width: 89.5%"
+    (click)="singUp.emit(true)"
+  ></button>
+</h4>
+
+<h6 *ngIf="error" class="p-error block">{{ error }}</h6>
+<form [formGroup]="loginForm">
+  <div class="input-panel flex flex-column px-3">
+    <input
+      type="text"
+      id="email"
+      placeholder="Email"
+      pInputText
+      [formControl]="loginForm.controls['email']"
+    />
+
+    <div class="p-inputgroup mt-3 mb-3">
+      <input
+        type="password"
+        id="password"
+        placeholder="password"
+        [formControl]="loginForm.controls['password']"
+        pInputText
+      />
+    </div>
+    <div></div>
+  </div>
+</form>
+
+<div class="mb-2" *ngIf="isLoading">
+  <p-progressBar mode="indeterminate"></p-progressBar>
+</div>
+<p-button
+  *ngIf="!isLoading"
+  [disabled]="!loginForm.valid || isLoading"
+  (click)="login()"
+  class="login-button p-button-secondary mb-6 px-3"
+  label="Acceder"
+></p-button>

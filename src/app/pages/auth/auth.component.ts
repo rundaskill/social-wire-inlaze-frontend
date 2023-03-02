@@ -9,25 +9,12 @@ import { AuthService } from 'src/app/services/auth/auth.service';
   styleUrls: ['./auth.component.css']
 })
 export class AuthComponent implements OnInit {
-  loginForm:FormGroup;
-  isLoading:boolean;
-  error:string;
-  constructor(private fb: FormBuilder,private loginService:AuthService) { }
+  register:boolean;
+  constructor() { }
 
   ngOnInit() {
-    this.generarForm()
+   
   }
 
-  generarForm(){
-    this.loginForm=this.fb.group({
-      email:["",Validators.compose([Validators.required,Validators.email])],
-      password:["",Validators.compose([Validators.required])]
-    })
-  }
-  login(){
-    this.loginService.login(this.loginForm.value).subscribe((data)=>{
-      console.log(data);
-      
-    })
-  }
+ 
 }

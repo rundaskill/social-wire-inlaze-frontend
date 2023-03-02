@@ -5,6 +5,8 @@ import { InputTextModule } from 'primeng/inputtext';
 import { ReactiveFormsModule,FormsModule } from '@angular/forms';
 import {ProgressBarModule} from 'primeng/progressbar';
 import {ButtonModule} from 'primeng/button';
+import { LoginComponent } from './login/login.component';
+import { SingUpComponent } from './singUp/singUp.component';
 
 @NgModule({
   imports: [
@@ -15,7 +17,7 @@ import {ButtonModule} from 'primeng/button';
     ButtonModule,
     FormsModule
   ],
-  declarations: [AuthComponent],
+  declarations: [AuthComponent,LoginComponent,SingUpComponent],
   exports:[AuthComponent]
 })
 export class AuthModule { }
