@@ -11,19 +11,16 @@ export class AuthService {
 private currentUserSubject: BehaviorSubject<CurrentUserValueModel>;
 public currentUser: Observable<CurrentUserValueModel> = null;
 constructor(private http: HttpClient) {
-  this.currentUserSubject = new BehaviorSubject<CurrentUserValueModel>(
-    JSON.parse(localStorage.getItem('currentUser'))
-  );
+  this.currentUserValue=JSON.parse(localStorage.getItem('currentUser'))
+
   this.currentUser = this.currentUserSubject.asObservable();
  }
  public get currentUserValue(): CurrentUserValueModel|null {
   return this.currentUserSubject?.value ||null
 }
 public set currentUserValue(token){
-  console.log(token);
-  
   this.currentUserSubject = new BehaviorSubject<CurrentUserValueModel>(
-    null
+    token
   );
 }
 login(form: {
@@ -39,5 +36,9 @@ login(form: {
         return user;
       })
     );
+}
+logout(){
+  localStorage.removeItem("currentUser")
+  this.currentUserValue=null
 }
 }

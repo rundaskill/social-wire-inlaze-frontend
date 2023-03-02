@@ -16,5 +16,7 @@ export class TopbarComponent implements OnInit {
     this.appComponent.changeView(view)
     this.activate=false
   }
-
+  logout(){
+    this.appComponent.authService.logout()
+  }
 }
