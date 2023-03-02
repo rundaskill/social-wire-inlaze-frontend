@@ -1,0 +1,88 @@
+.pages-body .pages-panel .pages-header h2 {
+  margin: 0;
+}
+
+.pages-body .pages-panel {
+  text-align: center;
+  z-index: 200;
+}
+
+.pages-body .pages-panel.card img {
+  width: 100%;
+}
+.pages-body .pages-panel.card > .card {
+  background-color: #262626;
+}
+.pages-body .pages-panel .pages-header {
+  margin-top: -3rem;
+}
+.pages-body .pages-panel .pages-header h2 {
+  margin: 0;
+}
+.pages-body .pages-panel .pages-detail {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.pages-body.contact-page .pages-panel {
+  text-align: left;
+  width: 75%;
+  max-width: 1050px;
+  margin: auto;
+  position: absolute;
+  top: 33%;
+  left: 0;
+  right: 0;
+}
+
+.pages-body.contact-page .pages-panel .title {
+  font-weight: 500;
+  margin-bottom: 0;
+}
+
+.pages-body.contact-page .pages-panel .card .contact-input {
+  width: 100%;
+}
+.pages-body.contact-page .pages-panel .card .right-panel i {
+  font-size: 2rem;
+  padding: 0.5rem;
+  border-radius: 4px;
+}
+.pages-body.contact-page .pages-panel .card .right-panel i.pi-home {
+  color: #1565c0;
+  background: #bbdefb;
+  background-size: auto;
+}
+.pages-body.contact-page .pages-panel .card .right-panel i.pi-briefcase {
+  color: #00838f;
+  background: #b2dfdb;
+  background-size: auto;
+}
+.pages-body.error-page .pages-panel .pages-header {
+  background: #d81b60;
+}
+.pages-body.accessdenied-page .pages-panel .pages-header {
+  background: #fb8c00;
+}
+
+.pages-body .pages-panel .pages-header img {
+  height: 14rem;
+  width: 20rem;
+}
+.pages-body.login-page .pages-panel .login-button > * {
+  width: 100%;
+}
+@media screen and (max-width: 768px) {
+  .pages-body.contact-page .pages-panel {
+    padding-bottom: 10em;
+  }
+  .pages-body.contact-page .pages-panel .p-button {
+    width: 100%;
+  }
+  .pages-body.contact-page .pages-panel .card .right-panel {
+    text-align: center;
+  }
+  .pages-body .pages-panel .pages-header img {
+    height: 14rem;
+    width: 20rem;
+  }
+}
