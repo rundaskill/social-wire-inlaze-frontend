@@ -1,6 +1,6 @@
 <form [formGroup]="filterMessageForm" style="padding-top: 25px">
   <div class="grid p-fluid">
-    <div class="col-12 md:col-6">
+    <div class="col-12 md:col-6" *ngIf="!activateOnlyDate">
       <label for="inputtext-right">What Search?</label>
       <span class="p-input-icon-right">
         <i class="pi pi-search"></i>

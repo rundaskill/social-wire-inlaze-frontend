@@ -20,4 +20,16 @@ export class MessageService {
       }
     })
   }
+  getMeAllMessage():Observable<ListMessageModel[]>{
+    return this.http.get<ListMessageModel[]>(`${environment.apiSocialWires}${this.path}/me`)
+  }
+  filterMeMessage(filter:FilterListMessageModel){
+    return this.http.get<ListMessageModel[]>(`${environment.apiSocialWires}${this.path}/me`,
+    {
+      params:{
+        creado_at:filter.creado_at
+      }
+    })
+
+  }
 }
