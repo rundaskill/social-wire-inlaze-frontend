@@ -52,7 +52,7 @@
 /* Estilo para el menú en pantallas pequeñas */
 @media screen and (max-width: 768px) {
   .topbar .menu {
-    display: block;
+    display: none;
     position: absolute;
     top: 47px;
     right: 14px;

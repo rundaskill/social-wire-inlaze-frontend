@@ -1,0 +1,36 @@
+.card {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+
+  margin: 20px;
+  background-color: #d8d9d8;
+}
+
+.card-header {
+  background-color: #d8d9d8;
+  padding: 10px;
+}
+
+.card-title {
+  margin: 0;
+}
+
+.card-body {
+  padding: 10px;
+}
+
+.card-footer {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+}
+
+.card-date {
+  margin-right: 20px;
+}
+
+.card-author {
+  margin-left: 20px;
+}
