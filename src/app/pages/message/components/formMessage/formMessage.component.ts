@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MessageService } from 'primeng/api';
+
+
 import { ListMessageModel } from 'src/app/models/message/message.model';
+import { MessageService } from 'src/app/services/message/message.service';
 
 @Component({
   selector: 'app-formMessage',
@@ -12,6 +14,7 @@ export class FormMessageComponent implements OnInit {
   messageForm:FormGroup;
   isLoading:boolean;
   data:ListMessageModel
+  @Output() dataChange:EventEmitter<ListMessageModel>=new EventEmitter<ListMessageModel>()
   constructor(private fb: FormBuilder,private messageService:MessageService) { }
 
   ngOnInit() {
@@ -24,6 +27,14 @@ export class FormMessageComponent implements OnInit {
     })
   }
   shareMessage(){
-    
+    this.messageService.postMessage(this.messageForm.value).subscribe({
+      next:(dataMessage)=>{
+        this.dataChange.emit(dataMessage.dato)
+        this.messageForm.reset()
+      },
+      error:()=>{
+
+      }
+    })
   }
 }

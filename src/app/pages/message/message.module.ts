@@ -14,6 +14,7 @@ import { AllMessageComponent } from './templates/allMessage/allMessage.component
 import { MeMessageComponent } from './templates/meMessage/meMessage.component';
 import { FormMessageComponent } from './components/formMessage/formMessage.component';
 import {InputTextareaModule} from 'primeng/inputtextarea';
+import { CreateMessageComponent } from './templates/createMessage/createMessage.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -26,7 +27,7 @@ import {InputTextareaModule} from 'primeng/inputtextarea';
     CardModule,
     InputTextareaModule
   ],
-  declarations: [MessageComponent,CardComponent,FormFilterComponent,AllMessageComponent,MeMessageComponent,FormMessageComponent],
+  declarations: [MessageComponent,CardComponent,FormFilterComponent,AllMessageComponent,MeMessageComponent,FormMessageComponent,CreateMessageComponent],
   exports:[MessageComponent]
 })
 export class MessageRedModule { }
