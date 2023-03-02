@@ -18,6 +18,7 @@
         placeholder="Nickname"
         [formControl]="signUpForm.controls['nickname']"
         pInputText
+        autocomplete="off"
       />
     </div>
 
@@ -25,6 +26,7 @@
       type="text"
       placeholder="Full Name"
       pInputText
+      autocomplete="off"
       [formControl]="signUpForm.controls['full_name']"
     />
     <div class="p-inputgroup mt-3 mb-1">
@@ -33,12 +35,14 @@
         placeholder="Email"
         [formControl]="signUpForm.controls['email']"
         pInputText
+        autocomplete="off"
       />
     </div>
     <div class="p-inputgroup mt-3 mb-3">
       <input
         type="password"
         id="password"
+        autocomplete="off"
         placeholder="password"
         [formControl]="signUpForm.controls['password']"
         pInputText
