@@ -1,0 +1,76 @@
+/* Estilo base para la topbar */
+.topbar {
+  background-color: #333;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  padding: 0 20px;
+}
+
+/* Estilo para el logo */
+.topbar .logo {
+  margin-right: auto;
+}
+
+.topbar .logo img {
+  height: 40px;
+}
+
+/* Estilo para los enlaces del menú */
+.topbar .menu a {
+  display: none;
+
+  color: #fff;
+  text-decoration: none;
+  margin-left: 20px;
+  font-size: 16px;
+}
+
+/* Estilo para el primer enlace del menú */
+.topbar .menu a:first-child {
+  margin-left: 0;
+}
+
+/* Estilo para el botón de menú en pantallas pequeñas */
+.topbar .menu-btn {
+  display: none;
+  cursor: pointer;
+}
+
+/* Estilo para el icono de mensaje */
+.topbar .message-icon {
+  margin-left: 20px;
+  font-size: 24px;
+}
+
+.topbar .message-icon i {
+  color: #fff;
+}
+
+/* Estilo para el menú en pantallas pequeñas */
+@media screen and (max-width: 768px) {
+  .topbar .menu {
+    display: block;
+    position: absolute;
+    top: 47px;
+    right: 14px;
+    background-color: #f3f4f8;
+    /* padding: 20px; */
+    flex-direction: column-reverse;
+    border-radius: 2% 2% 1%;
+  }
+
+  .topbar .menu a {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 20px;
+    color: #141e26;
+    padding: 12px;
+  }
+
+  .topbar .menu-btn {
+    display: block;
+  }
+}
