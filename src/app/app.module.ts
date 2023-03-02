@@ -7,8 +7,12 @@ import { AppmainComponent } from './layout/full/appmain/appmain.component';
 import { TopbarComponent } from './layout/full/topbar/topBar.component';
 import { AuthModule } from './pages/auth/auth.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
-import { MessageModule } from './pages/message/message.module';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import {MessagesModule} from 'primeng/messages';
+import { MessageService } from 'primeng/api';
+import { AuthTokenPermissionService } from './interceptors/auth-token-permission.service';
+import { MessageRedModule } from "./pages/message/message.module";
+import {MessageModule} from 'primeng/message';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,10 +25,18 @@ import { MessageModule } from './pages/message/message.module';
     AppRoutingModule,
     AuthModule,
     HttpClientModule,
-    MessageModule
-   
+    MessagesModule,
+    MessageModule,
+    MessageRedModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthTokenPermissionService,
+      multi: true,
+    },
+    MessageService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

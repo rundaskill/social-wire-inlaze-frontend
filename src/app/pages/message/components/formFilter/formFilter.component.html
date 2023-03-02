@@ -1,0 +1,45 @@
+<form [formGroup]="filterMessageForm" style="padding-top: 25px">
+  <div class="grid p-fluid">
+    <div class="col-12 md:col-6">
+      <label for="inputtext-right">What Search?</label>
+      <span class="p-input-icon-right">
+        <i class="pi pi-search"></i>
+        <input
+          type="text"
+          formControlName="title"
+          placeholder="I like Sports"
+          pInputText
+        />
+      </span>
+    </div>
+    <div class="col-12 md:col-6">
+      <label for="basic">Date select</label>
+      <p-calendar
+        formControlName="creado_at"
+        inputId="basic"
+        [showIcon]="true"
+      ></p-calendar>
+    </div>
+  </div>
+</form>
+<div class="grid p-fluid">
+  <div class="col-6 md:col-2 sm:col-10">
+    <button
+      [disabled]="!filterMessageForm.valid || isLoading"
+      (click)="searchMessage()"
+      pButton
+      pRipple
+      type="button"
+      label="Search"
+    ></button>
+  </div>
+  <div class="col-6 md:col-2 sm:col-10">
+    <button
+      pButton
+      pRipple
+      type="button"
+      label="Cancelar"
+      class="p-button-danger"
+    ></button>
+  </div>
+</div>

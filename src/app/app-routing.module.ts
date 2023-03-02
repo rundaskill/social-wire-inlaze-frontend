@@ -11,7 +11,7 @@ const routes: Routes = [
         //componente de personal  medico
         path: 'example',
         loadChildren: () =>
-          import('./pages/message/message.module').then((m) => m.MessageModule),
+          import('./pages/message/message.module').then((m) => m.MessageRedModule),
       },
     ]
   },

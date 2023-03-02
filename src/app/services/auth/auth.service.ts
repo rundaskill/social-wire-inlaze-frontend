@@ -19,6 +19,13 @@ constructor(private http: HttpClient) {
  public get currentUserValue(): CurrentUserValueModel|null {
   return this.currentUserSubject?.value ||null
 }
+public set currentUserValue(token){
+  console.log(token);
+  
+  this.currentUserSubject = new BehaviorSubject<CurrentUserValueModel>(
+    null
+  );
+}
 login(form: {
   email: string;
   password: string;
