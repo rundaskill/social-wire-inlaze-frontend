@@ -1,27 +1,27 @@
-# SocialWireInlazeFrontend
+# Frontend - Social Wires
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.6.
+### Descripción
 
-## Development server
+Social Wires es una red social que busca facilitar en un espacio publicaciones de personas con el fin de expresar lo que gusten en la red. Los usuarios se podrán registrar y con cuenta iniciada podrán publicar y ver mensajes de los demás usuarios.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+### Aspectos tecinicos
 
-## Code scaffolding
+El sistema está en [Angular CLI](https://github.com/angular/angular-cli) version 15.1.6. utiliza [primeng](https://primeng.org/) para los input y se ejecuta [nginx](https://www.nginx.com/)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Requerimientos
 
-## Build
+- Docker
+- Docker compose
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Installation
 
-## Running unit tests
+```sh
+git clone https://github.com/rundaskill/social-wire-inlaze-frontend.git
+cd social-wire-inlaze-frontend
+npm run docker:dev
+npm run docker-compose:dev
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Uso
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+EL api va estar en el puerto 4501 para acceder al la ruta http://localhost:4201/
