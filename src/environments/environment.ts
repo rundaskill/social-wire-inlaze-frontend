@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   version: '0.0.1',
-  apiSocialWires: 'http://localhost:3000/',
+  apiSocialWires: 'http://localhost:4501/',
 };
 
 /*

@@ -1,0 +1,9 @@
+version: "3.8"
+services:
+  mytfrontdev:
+    container_name: mytfrontdev
+    image: inlaze/social-wire-frontend:0.0.1 #llama la imagen
+    tty: true
+    restart: always
+    ports:
+      - 4201:4201
